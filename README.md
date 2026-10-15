@@ -127,7 +127,8 @@ All endpoints are under `/api`, accept and return JSON, and report errors as `{"
 | POST | `/auth/login` | - | `email`, `password` -> `{token, user}` |
 | POST | `/auth/logout` | token | invalidates the user's tokens |
 | GET | `/auth/me` | token | current user |
-| GET | `/health` | - | health check |
+| GET | `/
+api/health` | - | health check |
 
 ### Student (role `student`)
 | Method | Endpoint | Description |
@@ -187,7 +188,7 @@ All endpoints are under `/api`, accept and return JSON, and report errors as `{"
 | Login returns 401 after a long time | Tokens expire after 8 hours or after logout; log in again |
 | Want a fresh database | Stop the server, delete `backend/placement_portal.db`, start again (the admin account is re-created) |
 | Windows: Celery worker does not start | Add `--pool=solo` to the worker command |
-
+| `ModuleNotFoundError: No module named 'pkg_resources'` | Run `pip install -r requirements.txt` inside `backend/`; `setuptools<81` is pinned because `passlib` needs `pkg_resources` |
 ## Data model
 
 `User` (+ `Role`, Flask-Security) 1-1 `StudentProfile` or `CompanyProfile`; `CompanyProfile` 1-N `PlacementDrive`; `StudentProfile` N-M `PlacementDrive` through `Application` (unique per student and drive).
