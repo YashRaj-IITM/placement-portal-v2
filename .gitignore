@@ -9,3 +9,6 @@ exports_test/
 node_modules/
 dist/
 .DS_Store
+
+# Celery Beat runtime state
+celerybeat-schedule*

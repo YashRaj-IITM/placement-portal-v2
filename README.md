@@ -55,8 +55,10 @@ placement-portal-v2/
 └── frontend/               # Vue 3 app (src/api.js, router, store, views)
 ```
 
-## Installation
 
+
+## Installation
+**Important:** Run the backend and frontend in separate Terminal sessions. Start each session from the project root. Run Redis, the Celery worker, and Celery Beat in separate Terminal sessions when using background jobs.
 ### Prerequisites
 Python 3.10+, Node.js 18+, and (only for background jobs) Redis. MailHog is optional.
 
