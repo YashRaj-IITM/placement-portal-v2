@@ -127,8 +127,7 @@ All endpoints are under `/api`, accept and return JSON, and report errors as `{"
 | POST | `/auth/login` | - | `email`, `password` -> `{token, user}` |
 | POST | `/auth/logout` | token | invalidates the user's tokens |
 | GET | `/auth/me` | token | current user |
-| GET | `/
-api/health` | - | health check |
+| GET | `/api/health` | - | health check |
 
 ### Student (role `student`)
 | Method | Endpoint | Description |
